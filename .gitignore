@@ -12,3 +12,4 @@ out/
 
 #sys
 .DS_Store
+.aider*

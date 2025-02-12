@@ -10,7 +10,8 @@ contract TestSafeTestTools is Test, SafeTestTools {
     using SafeTestLib for SafeInstance;
 
     function setUp() public {
-        vm.createSelectFork(vm.envString("ETH_RPC_URL"));
+        // Use fork-url directly instead of environment variable
+        vm.createSelectFork("https://eth-mainnet.g.alchemy.com/v2/WtlcZHaE5tKurb4IHhH9N4z8o-HujUGx");
     }
 
     function testCanAttachToSafe_viennaPod() public {

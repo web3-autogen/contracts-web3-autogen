@@ -13,6 +13,11 @@ contract TestSafeTestTools is Test, SafeTestTools {
     address bob = address(0xb0b);
     address carol = address(0xc4401);
 
+    function setUp() public {
+        // Set environment variable directly in the test
+        vm.setEnv("ETH_RPC_URL", "https://eth-mainnet.g.alchemy.com/v2/WtlcZHaE5tKurb4IHhH9N4z8o-HujUGx");
+    }
+
     function testAutoInitAndTransfer() public {
         SafeInstance memory safeInstance = _setupSafe();
         safeInstance.execTransaction(alice, 0.5 ether, "");
@@ -81,7 +86,8 @@ contract TestSafeTestTools is Test, SafeTestTools {
     }
 
     function testCanAttachToSafe() public {
-        vm.createSelectFork(vm.envString("ETH_RPC_URL"));
+        // Create fork before trying to access mainnet contracts
+        vm.createSelectFork("https://eth-mainnet.g.alchemy.com/v2/WtlcZHaE5tKurb4IHhH9N4z8o-HujUGx");
 
         address vienna_safe = 0x9A2755701dCE41cd124e59865fA0734d15200711;
         SafeInstance memory instance = _attachToSafe(vienna_safe);
