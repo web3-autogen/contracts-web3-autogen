@@ -1,3 +1,17 @@
+
+# Updated readme for devs
+
+(polish this later)
+
+
+1. `foundryup` command to install requirements
+2. open one terminal and run `anvil --fork-url https://mainnet.infura.io/v3/b50746a0fdb541e7b2738bb0f1d12e77` -- this will create a local fork of mainnet to play with
+3. on another terminal run `forge test -vvv` this will deploy a safe with owners from `config/safe-config.json`. the newly created safe address will be printed out. 
+
+You can use the RPC endpoint of `http://127.0.0.1:8545` to interact with the blockchain and the newly created safe. 
+
+
+
 # Gnosis Safe Tools for Foundry
 
 `SafeTestTools` is a friendly wrapper for deploying safes, executing transactions, performing EIP1271 signatures, and enabling/disabling modules. It manages `Safe` deployments, private keys, and transaction signing so you can simply call `_setupSafe()` and ensure your code works with Safe's as well as EOAs.

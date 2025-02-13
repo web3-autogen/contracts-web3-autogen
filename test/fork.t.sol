@@ -11,7 +11,7 @@ contract TestSafeTestTools is Test, SafeTestTools {
 
     function setUp() public {
         // Use fork-url directly instead of environment variable
-        vm.createSelectFork("https://eth-mainnet.g.alchemy.com/v2/WtlcZHaE5tKurb4IHhH9N4z8o-HujUGx");
+        vm.createSelectFork("http://127.0.0.1:8545");
     }
 
     function testCanAttachToSafe_viennaPod() public {
